@@ -15,6 +15,10 @@ class Application extends Nullstack {
     const databaseClient = new MongoClient('mongodb://localhost:27017/');
     await databaseClient.connect();
     context.database = await databaseClient.db('league-info-cards');
+    context.riotBaseDataUrl = "http://ddragon.leagueoflegends.com/cdn/10.15.1/data/en_US/champion";
+    context.riotBaseImageUrl = "https://ddragon.leagueoflegends.com/cdn/10.15.1/img";
+
+    await import('isomorphic-fetch');
   }
 
   initialize(context) {
