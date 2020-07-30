@@ -39,7 +39,6 @@ class Application extends Nullstack {
     )
   }
 
-
 }
 
 export default Application;
