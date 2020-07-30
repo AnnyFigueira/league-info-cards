@@ -28,9 +28,7 @@ class ChampionForm extends Nullstack {
       context.champions = [...context.champions, champion]; 
       context.router.url = `/champion/${champion.slug}`;
     }
-
   }
-
 
   render() {
     return (
