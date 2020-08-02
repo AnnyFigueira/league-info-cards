@@ -3,9 +3,14 @@ import ChampionForm from './ChampionForm';
 
 class ChampionList extends Nullstack {
   
-  renderChampion({name, slug}) {
+  filteredName = "";
+
+  renderChampion({name, slug, version}) {
+    if(this.filteredName && name.indexOf(this.filteredName) == -1) {
+      return false;
+    }
     return (
-      <li>
+      <li class="xl bg1 p3 m2b">
         <a href={`/champions/${slug}`}>{name}</a>
       </li>
     )
@@ -13,9 +18,12 @@ class ChampionList extends Nullstack {
 
   render({champions}) {
     return (
-      <div> 
-        <h1>Champion List</h1>
-        <ul>
+      <div class="xxx">
+        <h1 class="xl c3 m3y">Champion List</h1>
+        <form class="xl m2b">
+          {!!champions.length && <input type="search" bind="filteredName" placeholder="Search champions" class="xl p3 bc1" />}
+        </form>
+        <ul class="xl">
           {champions.map((champion) => <Champion {...champion} />)}
         </ul>
         <ChampionForm />

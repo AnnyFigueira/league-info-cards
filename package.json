@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
-    "mongodb": "^3.5.9"
+    "mongodb": "^3.5.9",
+    "nullsheet": "0.0.4"
   }
 }
